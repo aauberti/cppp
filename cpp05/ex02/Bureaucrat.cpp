@@ -37,18 +37,14 @@ void Bureaucrat::demotion(void) {
 	this->_grade++;
 }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw()
-{
-	return ("Grade too High.");
-}
-
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()
-{
-	return ("Grade too Low.");
-}
 
 void Bureaucrat::signForm(Form& form) const {
+	try {
 		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	} catch (const Form::GradeTooLowException& e) {
+		std::cout << _name << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {

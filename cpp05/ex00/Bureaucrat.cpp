@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade): _name(name), _grade(g
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) 
-    : _name(other._name), _grade(other._grade) 
+	: _name(other._name), _grade(other._grade) 
 {}
 
 Bureaucrat::~Bureaucrat(void) {}
