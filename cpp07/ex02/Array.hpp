@@ -16,7 +16,7 @@ class Array
 		Array	&operator=(const Array &other);
 		T		&operator[](std::size_t index);
 
-		class outOfBoundsIndexException;
+		class OutOfBoundsIndexException;
 
 	private:
 		T			*_array;
@@ -24,7 +24,7 @@ class Array
 };
 
 template<typename T>
-class Array<T>::outOfBoundsIndexException : public std::exception
+class Array<T>::OutOfBoundsIndexException : public std::exception
 {
 	public:
 		const char *what() const throw();

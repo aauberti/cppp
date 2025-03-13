@@ -49,13 +49,13 @@ template <typename T>
 T &Array<T>::operator[](std::size_t index)
 {
 	if (index >= _size)
-		throw Array::outOfBoundsIndexException();
+		throw Array::OutOfBoundsIndexException();
 
 	return (_array[index]);
 }
 
 template <typename T>
-const char *Array<T>::outOfBoundsIndexException::what(void) const throw()
+const char *Array<T>::OutOfBoundsIndexException::what(void) const throw()
 {
 	return ("Out of bound");
 }
